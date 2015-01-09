@@ -29,16 +29,7 @@ func _divideAndConquer(xP, yP []point) (float64, *pair) {
 
 	if n <= 3 {
 		p := bruteForce(xP)
-		min := makePair(xP[0], xP[1]).distance
-
-		for i := 0; i < n; i++ {
-			for j := 0; j < n; j++ {
-				if min < makePair(xP[i], xP[j]).distance {
-					min = makePair(xP[i], xP[j]).distance
-				}
-			}
-		}
-		return min, p
+		return p.distance, p
 	}
 
 	xL := xP[:n>>1]
