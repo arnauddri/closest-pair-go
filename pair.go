@@ -5,27 +5,6 @@ import (
 	"strconv"
 )
 
-type point struct {
-	x uint32
-	y uint32
-}
-
-type Point interface {
-	toString() string
-}
-
-func makePoint(x uint32, y uint32) *point {
-	A := new(point)
-	A.x = x
-	A.y = y
-
-	return A
-}
-
-func (A *point) toString() string {
-	return "(" + string(A.x) + "," + string(A.y) + ")"
-}
-
 type pair struct {
 	point1   point
 	point2   point

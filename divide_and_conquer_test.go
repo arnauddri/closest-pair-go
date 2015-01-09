@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestBruteForce(t *testing.T) {
+func TestDivideAndConquer(t *testing.T) {
 	Points := make([]point, 10)
 	for i := 0; i < 10; i++ {
 		a := makePoint(float64(i), float64(i*i))
@@ -15,9 +15,10 @@ func TestBruteForce(t *testing.T) {
 
 	A := makePoint(float64(0), float64(0))
 	B := makePoint(float64(1), float64(1))
-	P := bruteForce(Points)
+	P := divideAndConquer(Points)
 	if P.point1 != *A || P.point2 != *B {
-		fmt.Println(P.point1, *A, *B)
+		fmt.Println(Points)
+		fmt.Println(P)
 		t.Error()
 	}
 }
